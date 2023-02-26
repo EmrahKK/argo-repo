@@ -5,10 +5,10 @@ metadata:
 spec:
   awsElasticsearch:
     host: 192.168.1.247
-    index_name: logs
-    user: admin
+    index_name: "logs"
+    user: "admin"
     password: 
-      value: admin
+      value: "admin"
     ssl_verify: false  
     buffer:
       timekey: 1m
