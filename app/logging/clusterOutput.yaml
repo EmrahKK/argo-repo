@@ -1,0 +1,15 @@
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: Output
+metadata:
+  name: aws-elasticsearch-output
+spec:
+  awsElasticsearch:
+    host: 192.168.1.247
+    index_name: logs
+    user: "admin"
+    password: "admin"
+    ssl_verify: false  
+    buffer:
+      timekey: 1m
+      timekey_wait: 10s
+      timekey_use_utc: true
