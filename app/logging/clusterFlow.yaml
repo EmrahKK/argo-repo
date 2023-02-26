@@ -1,0 +1,16 @@
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: ClusterFlow
+metadata:
+  name: cluster-flow
+spec:
+  filters:
+    - tag_normaliser:
+        format: ${namespace_name}.${pod_name}.${container_name}
+  localOutputRefs:
+    - aws-elasticsearch-output
+  match:
+    - select:
+        labels:
+          app.kubernetes.io/name: argocd-server
+        namespaces:
+          - argo-cd

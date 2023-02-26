@@ -3,3 +3,4 @@ kind: Kustomization
 namespace: logging
 resources:
 - clusterOutput.yaml
+- clusterFlow.yaml
