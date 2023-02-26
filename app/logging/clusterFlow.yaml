@@ -11,11 +11,6 @@ spec:
   match:
     - select:
         labels:
-          app.kubernetes.io/name: argocd-server
-        namespaces:
-          - argo-cd
-    - select:
-        labels:
           microk8s-application: nginx-ingress-microk8s
         namespaces:
           - ingress
