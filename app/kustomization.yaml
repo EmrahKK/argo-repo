@@ -5,9 +5,6 @@ namespace: myns
 resources:
 - ../base
 - ns.yaml
-- service.yaml
-- deploy.yaml
-- ingress.yaml
 
 commonAnnotations:
   sample-go/version: v1
