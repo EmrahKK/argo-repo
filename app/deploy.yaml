@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: sample-go
+  name: sample-go
+  namespace: myns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sample-go
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: sample-go
+    spec:
+      containers:
+      - image: quay.io/christianh814/simple-go:latest
+        name: sample-go
+        volumeMounts:
+        - name: config-vol
+          mountPath: /etc/myapp
+        env:
+          - name: MYAPP_NODE
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
+          - name: MYAPP_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: MYAPP_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+        resources: {}
+      volumes:
+        - name: config-vol
+          configMap:
+            name: myconfig
