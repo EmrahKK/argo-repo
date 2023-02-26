@@ -2,16 +2,14 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    haproxy.org/path-rewrite: "/"
-    ingress.kubernetes.io/ssl-redirect: "false"
-    kubernetes.io/ingress.class: "haproxy"
+    kubernetes.io/ingress.class: "nginx"
   labels:
     app: sample-go
   name: sample-go-ingress
   namespace: myns
 spec:
   rules:
-  - host: sample-go.127.0.0.1.nip.io
+  - host: sample-go.tuf.local
     http:
       paths:
       - path: /
