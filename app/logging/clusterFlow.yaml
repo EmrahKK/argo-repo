@@ -6,7 +6,7 @@ spec:
   filters:
     - tag_normaliser:
         format: ${namespace_name}.${pod_name}.${container_name}
-  localOutputRefs:
+  globalOutputRefs:
     - aws-elasticsearch-output
   match:
     - select:
