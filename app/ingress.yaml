@@ -4,7 +4,6 @@ metadata:
   labels:
     app: sample-go
   name: sample-go-ingress
-  namespace: myns
 spec:
   ingressClassName: nginx
   rules:
