@@ -3,8 +3,8 @@ kind: Kustomization
 namespace: myns
 
 resources:
+- ../base
 - ns.yaml
-- cm.yaml
 - service.yaml
 - deploy.yaml
 - ingress.yaml

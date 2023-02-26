@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: myconfig
-data:
-  test.conf: |
-    title = "Example Config"
-    enableAwesome = "true"
-    version = "v1"
